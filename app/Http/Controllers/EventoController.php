@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Evento;
+use App\User;
+use Carbon\Carbon;
+
+use Illuminate\Support\Facades\Auth;
 
 class EventoController extends Controller
 {
@@ -13,7 +18,11 @@ class EventoController extends Controller
      */
     public function index()
     {
-        //
+        $persona = Auth::user();
+        $eventos = Evento::where('id_usuario',$persona->id)->get();
+        //$usuario = Usuario::where('persona_id',$persona->id)->get();    
+        //$garantias = Garantia::where('usuario_id',$usuario[0]->id)->get();
+        return view('welcome', compact('eventos'));
     }
 
     /**
@@ -23,7 +32,10 @@ class EventoController extends Controller
      */
     public function create()
     {
-        //
+        $users = Auth::user();
+        $date = Carbon::now();
+        $date = $date->format('Y-m-d');
+        return view('Usuario.create-event', compact('users'))->with('date',$date);
     }
 
     /**
@@ -34,7 +46,10 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $Evento = Evento::create($request->all());
+
+        
+        return view('welcome');
     }
 
     /**

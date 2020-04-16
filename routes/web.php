@@ -16,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
+Route::get('Evento', function () {
+    return view('Usuario.event');
+});
+Route::get('consejo', function () {
+    return view('Usuario.tips');
+});
+Route::resource('evento','EventoController');
+Auth::routes(); 
 
 //------------------------------Usuario 
 //Inicio

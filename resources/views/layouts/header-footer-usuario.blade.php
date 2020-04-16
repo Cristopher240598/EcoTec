@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li class="nav-item" role="presentation" style="max-width: 100%;">
-                            <a class="nav-link text-center" href="tips.html" style="font-size: 15px;max-width: 100%;">
+                            <a class="nav-link text-center" href="consejo" style="font-size: 15px;max-width: 100%;">
                                 <i class="fas fa-child" style="width: 17px;font-size: 20px;"></i>
                                 <span class="d-flex justify-content-center">Consejos</span>
                             </a>
